@@ -4,40 +4,56 @@
  */
 package days;
 
-/**
- *
- * @author sivagamasrinivasan
- */
-public class Weekdays 
-{
-  public void nameOfDay(String code)
-     {
-    switch(code.toUpperCase())
-      {
-      case "ONE":
-        System.out.println("Monday");
-        break;
-      case "TWO":
-        System.out.println("Tuesday");
-        break;
-      case "THREE":
-        System.out.println("Wednesday");
-        break;
-      case "FOUR":
-        System.out.println("Thursday");
-        break;
-      case "FIVE":
-        System.out.println("Friday");
-        break;
-      case "SIX":
-        System.out.println("Saturday");
-        break;
-      case "SEVEN":
-        System.out.println("Sunday");
-        break;
+public class Weekdays {
+    public enum Day {
+        ONE("Monday"),
+        TWO("Tuesday"),
+        THREE("Wednesday"),
+        FOUR("Thursday"),
+        FIVE("Friday"),
+        SIX("Saturday"),
+        SEVEN("Sunday");
+
+        private final String name;
+
+        Day(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
-  
-}
+
+    public static void main(String[] args) {
+        printAllDays();
+        assignDayVariables();
+    }
+
+    public static void printAllDays() {
+        for (Day day : Day.values()) {
+            System.out.println(day.getName());
+        }
+    }
+
+    public static void assignDayVariables() {
+        Day one = Day.ONE;
+        Day two = Day.TWO;
+        Day three = Day.THREE;
+        Day four = Day.FOUR;
+        Day five = Day.FIVE;
+        Day six = Day.SIX;
+        Day seven = Day.SEVEN;
+
+        System.out.println("Variables assigned for each day:");
+        System.out.println("One: " + one.getName());
+        System.out.println("Two: " + two.getName());
+        System.out.println("Three: " + three.getName());
+        System.out.println("Four: " + four.getName());
+        System.out.println("Five: " + five.getName());
+        System.out.println("Six: " + six.getName());
+        System.out.println("Seven: " + seven.getName());
+    }
 }
 
 
